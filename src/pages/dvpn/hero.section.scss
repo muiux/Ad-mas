@@ -1,0 +1,89 @@
+@import "styles/utils", "styles/variables";
+
+.DVPN_Hero {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-bottom: $dashboard-image-height / 4;
+  //background: url("assets/backgrounds/dots.svg") no-repeat;
+  z-index: 1;
+  // url("assets/backgrounds/dapps.png") right 0px bottom 45px no-repeat;
+
+  #tsparticles {
+    position: absolute;
+    z-index: 0;
+  }
+
+  .hero-elements {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    margin-top: 3rem;
+  }
+
+  .crypto-badges {
+    margin-top: 5rem;
+    margin-bottom: -12rem;
+  }
+
+  & .title {
+    @include font-normal;
+    font-size: 56px;
+    letter-spacing: -1px;
+    color: $text-secondary;
+    text-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+
+    &.grad {
+      @include gradient-text;
+    }
+  }
+
+  & .subTitle {
+    @include font-normal;
+    font-size: 18px;
+    line-height: 140%;
+    color: $text-info;
+  }
+
+  & .tip {
+    @include font-normal;
+    font-size: 12px;
+    line-height: 140%;
+    color: $text-info;
+  }
+
+  & .badge {
+    border: 1px solid #0085ff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: fit-content;
+
+    @include gradient-text;
+    @include font-bold;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 10px;
+    margin: 10px;
+
+    & > strong {
+      font-size: 12px;
+    }
+  }
+
+  & .dashboard {
+    position: absolute;
+    bottom: 7.5rem;
+    left: 52%;
+    transform: translate(-50%, 100%);
+    z-index: 1;
+    width: fit-content;
+    z-index: 0;
+
+    & > img {
+      height: $dashboard-image-height;
+      filter: drop-shadow(0px 4px 174px rgba(0, 133, 255, 0.4));
+    }
+  }
+}

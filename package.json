@@ -1,0 +1,31 @@
+{
+  "name": "masq-site-v2",
+  "version": "1.0.0",
+  "description": "MASQ Site V2",
+  "main": "index.js",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "start": "npm run develop"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@popperjs/core": "^2.11.0",
+    "bootstrap": "^5.1.3",
+    "classnames": "^2.3.1",
+    "gatsby": "^4.3.0",
+    "gatsby-plugin-google-analytics": "^4.3.0",
+    "gatsby-plugin-offline": "^5.3.0",
+    "gatsby-plugin-root-import": "^2.0.8",
+    "gatsby-plugin-sass": "^5.3.0",
+    "jquery": "^3.6.0",
+    "node-sass": "^6.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2",
+    "react-tsparticles": "^1.37.5",
+    "tachyons-sass": "^4.9.5"
+  },
+  "devDependencies": {}
+}

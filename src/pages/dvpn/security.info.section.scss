@@ -1,0 +1,55 @@
+@import "styles/utils", "styles/variables";
+
+.DVPN_SecurityInfo {
+  padding: 100px 0px;
+  background: url("assets/backgrounds/stars.svg") left 0px top 100px no-repeat;
+  position: relative;
+  z-index: 1;
+  background-color: #000c11;
+
+  .panel {
+    padding: 100px 0px;
+  }
+
+  .multiple-hops {
+    background: url("assets/backgrounds/hops.png") right 0px center no-repeat;
+  }
+  
+  .trace-resistant {
+    background: url("assets/backgrounds/trace.png") right 0px center no-repeat;
+  }
+
+  .get-paid {
+    background: url("assets/backgrounds/wallet.png") right 0px center no-repeat;
+  }
+
+  .label {
+    @include label-text;
+  }
+  .title {
+    @include title-text;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+  }
+  .subtitle {
+    @include subtitle-text;
+
+    & > span {
+      color: $text-danger;
+    }
+  }
+
+  .chromium {
+    border: 3px solid rgba(0, 133, 255, 0.1);
+    box-shadow: 0px 0px 54px rgba(0, 133, 255, 0.08);
+    border-radius: 10px;
+    height: 46px;
+  }
+
+  & .tip {
+    @include font-normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: $text-info;
+  }
+}

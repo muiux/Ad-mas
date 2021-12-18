@@ -1,0 +1,16 @@
+@import "styles/variables";
+@import "styles/utils";
+
+.Layout_Alert {
+  background-color: #000000;
+  height: 36px;
+
+  & span {
+    @include font-bold;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 1px;
+
+    color: $text-success;
+  }
+}

@@ -1,0 +1,49 @@
+@import "styles/utils", "styles/variables";
+
+.DVPN_SecurityHero {
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
+
+  background: url("assets/backgrounds/star-net.svg") top 70% right 0 no-repeat,radial-gradient(
+      56.78% 84.41% at 100% 26%,
+      rgba(19, 213, 255, 0.2) 0%,
+      rgba(123, 19, 255, 0) 100%
+    ),
+    $bg-secondary;
+  padding-top: $dashboard-image-height / 2 + 25px;
+  padding-bottom: 150px;
+
+  & .SocialProofers > a {
+    margin: 10px;
+  }
+
+  & .Protocol {
+    margin-top: 50px;
+    width: calc(50% + 150px);
+
+    & > .label {
+      @include label-text;
+    }
+
+    & > .title {
+      @include title-text;
+    }
+
+    & > .point {
+      & img {
+        width: 50px;
+      }
+      & span {
+        @include font-bold;
+        font-size: 16px;
+        line-height: 140%;
+        color: #002737;
+      }
+    }
+    & .tip {
+      @include font-normal;
+      font-size: 14px;
+      line-height: 140%;
+      color: $text-info;
+    }
+  }
+}

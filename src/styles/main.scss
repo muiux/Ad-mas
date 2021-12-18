@@ -1,0 +1,29 @@
+@import "~tachyons-sass/tachyons.scss", "variables";
+
+@font-face {
+  font-family: "Uni Neue";
+  src: url("assets/fonts/UniNeue/UniNeueRegular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Uni Neue";
+  src: url("assets/fonts/UniNeue/UniNeueBook.woff") format("woff");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Uni Neue";
+  src: url("assets/fonts/UniNeue/UniNeueBold.woff") format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Uni Neue";
+  src: url("assets/fonts/UniNeue/UniNeueHeavy.woff") format("woff");
+  font-weight: 900;
+}
+
+* {
+  transition: all 0.2s;
+}

@@ -1,0 +1,40 @@
+@import "styles/variables";
+@import "styles/utils";
+
+.Layout_Footer {
+  background-color: $bg-primary;
+  padding-top: 150px;
+  padding-bottom: 100px;
+
+  & .logo {
+    width: 150px;
+  }
+  & p {
+    @include font-normal;
+    line-height: 140%;
+    font-size: 16px;
+    color: $text-info;
+  }
+  & .label {
+    @include font-bold;
+    @include gradient-text;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+  }
+
+  & .external {
+    a {
+      text-decoration: none;
+      & > span {
+        @include font-normal;
+        color: $text-secondary;
+        font-size: 16px;
+        line-height: 140%;
+        &:hover {
+          color: $text-primary;
+        }
+      }
+    }
+  }
+}

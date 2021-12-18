@@ -1,0 +1,24 @@
+@import "styles/variables";
+@import "styles/utils";
+
+.Button {
+  width: fit-content;
+  padding: 15px;
+  border: 2px solid #00b2ff;
+  background-color: transparent;
+  border-radius: 6px;
+  box-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+
+  & > span {
+    @include font-normal;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: $text-secondary;
+  }
+
+  &.fill {
+    background: linear-gradient(0deg, #0085ff 0%, #00b2ff 100%);
+    border: none;
+    box-shadow: none;
+  }
+}

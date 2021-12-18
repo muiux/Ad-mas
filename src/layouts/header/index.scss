@@ -1,0 +1,28 @@
+@import "styles/variables";
+@import "styles/utils";
+
+.Layout_Header {
+  background-color: transparent;
+  padding: 25px 50px;
+  z-index: 1;
+  position: relative;
+
+  & > img {
+    width: 120px;
+  }
+
+  &__navGroup .navItem {
+    @include font-bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.175em;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: $text-secondary;
+
+    &.active,
+    &:hover {
+      color: $text-primary;
+    }
+  }
+}

@@ -1,12 +1,99 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
-stages:
-- test
-sast:
-  stage: test
-include:
-- template: Security/SAST.gitlab-ci.yml
+image: node:14-alpine
+
+cache:
+  key: ${CI_COMMIT_SHORT_SHA}
+  paths:
+    - .yarn
+    - dist/
+    - node_modules/
+
+variables:
+  AWS_DEFAULT_REGION: us-west-2
+
+stages: 
+  - build-develop
+  - build-production
+  - s3-upload-develop
+  - s3-upload-production
+
+build-develop:
+  stage: build-develop
+  environment:
+    name: develop
+  only:
+    - develop
+  script:
+    - yarn install
+    - yarn build
+  artifacts:
+    name: ${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_BRANCH}
+    paths:
+      - dist/
+  cache:
+    key: ${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_BRANCH}
+    paths:
+      - dist/
+      - node_modules/
+  only:
+    refs:
+      - develop
+
+build-production:
+  stage: build-production
+  environment:
+    name: production
+  only:
+    - production
+  script:
+    - yarn install
+    - yarn build
+  artifacts:
+    name: ${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_BRANCH}
+    paths:
+      - dist/
+  cache:
+    key: ${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_BRANCH}
+    paths:
+      - dist/
+      - node_modules/
+  only:
+    refs:
+      - main
+      - master
+
+s3-upload-develop:
+  stage: s3-upload-develop
+  image:
+     name: banst/awscli
+     entrypoint: [""]
+  environment:
+    name: develop
+  script:
+    - cd dist
+    - echo S3 Bucket - $S3_BUCKET
+    - echo Cloudfront Distribution ID - $CLOUDFRONT_ID
+    - aws s3 rm s3://$S3_BUCKET/ --recursive
+    - aws s3 sync ./ s3://$S3_BUCKET/
+    - export AWS_MAX_ATTEMPTS="2"
+    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
+  only:
+    refs:
+      - develop
+
+s3-upload-production:
+  stage: s3-upload-production
+  image:
+     name: banst/awscli
+     entrypoint: [""]
+  environment:
+    name: production
+  script:
+    - cd dist
+    - aws s3 rm s3://$S3_BUCKET/ --recursive
+    - aws s3 sync ./ s3://$S3_BUCKET/
+    - export AWS_MAX_ATTEMPTS="2"
+    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
+  only:
+    refs:
+      - main
+      - master
