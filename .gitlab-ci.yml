@@ -6,6 +6,8 @@ cache:
     - .yarn
     - dist/
     - node_modules/
+    - public/
+    - .cache/
 
 variables:
   AWS_DEFAULT_REGION: us-west-2
@@ -28,12 +30,14 @@ build-develop:
   artifacts:
     name: ${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_BRANCH}
     paths:
-      - dist/
+      - public/
   cache:
     key: ${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_BRANCH}
     paths:
       - dist/
       - node_modules/
+      - public/
+      - .cache/
   only:
     refs:
       - develop
@@ -50,12 +54,14 @@ build-production:
   artifacts:
     name: ${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_BRANCH}
     paths:
-      - dist/
+      - public/
   cache:
     key: ${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_BRANCH}
     paths:
       - dist/
       - node_modules/
+      - public/
+      - .cache/
   only:
     refs:
       - main
@@ -69,7 +75,7 @@ s3-upload-develop:
   environment:
     name: develop
   script:
-    - cd dist
+    - cd public
     - echo S3 Bucket - $S3_BUCKET
     - echo Cloudfront Distribution ID - $CLOUDFRONT_ID
     - aws s3 rm s3://$S3_BUCKET/ --recursive
@@ -88,7 +94,7 @@ s3-upload-production:
   environment:
     name: production
   script:
-    - cd dist
+    - cd public
     - aws s3 rm s3://$S3_BUCKET/ --recursive
     - aws s3 sync ./ s3://$S3_BUCKET/
     - export AWS_MAX_ATTEMPTS="2"
