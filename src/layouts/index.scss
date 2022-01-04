@@ -2,4 +2,10 @@
 
 .Layout {
   background-color: $bg-primary;
+
+  .body .container {
+    @media (min-width: 1140px) {
+      width: 1140px;
+    }
+  }
 }

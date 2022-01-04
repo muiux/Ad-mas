@@ -3,16 +3,20 @@
 
 .Layout_Header {
   background-color: transparent;
-  padding: 25px 50px;
-  z-index: 1;
-  position: relative;
+  padding: 30px 90px;
+  z-index: 2;
+  position: absolute;
+
+  @media (max-width: 576px) {
+    padding: 30px;
+  }
 
   & > img {
     width: 120px;
   }
 
   &__navGroup .navItem {
-    @include font-bold;
+    @include font-normal;
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.175em;
@@ -22,7 +26,31 @@
 
     &.active,
     &:hover {
-      color: $text-primary;
+      color: $text-active;
+    }
+  }
+
+  .hambuger-menu {
+    cursor: pointer;
+  }
+}
+
+.drawer {
+  background: $bg-primary !important;
+  padding: 50px 0px;
+
+  & a {
+    @include font-normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.175em;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: $text-secondary;
+    margin: 10px 0px;
+
+    &.active {
+      color: $text-active;
     }
   }
 }

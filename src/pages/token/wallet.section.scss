@@ -1,0 +1,33 @@
+@import "styles/utils", "styles/variables";
+
+.Token_wallet {
+  padding-top: 75px;
+  padding-bottom: 200px;
+  position: relative;
+
+  .label {
+    @include label-text;
+  }
+
+  .title {
+    @include title-text;
+    color: $text-secondary;
+  }
+
+  .subtitle {
+    @include subtitle-text;
+  }
+
+  .image {
+    margin-top: 75px;
+    filter: drop-shadow(0px 0px 115px rgba(0, 133, 255, 0.35));
+  }
+
+  .swaps {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    z-index: 1;
+  }
+}

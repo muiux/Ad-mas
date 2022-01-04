@@ -1,0 +1,48 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227 257" width="227" height="257">
+	<title>quater-radial-top-svg</title>
+	<defs>
+		<linearGradient id="grd1" gradientUnits="userSpaceOnUse"  x1="249.1" y1="187.5" x2="249.1" y2="317.4">
+			<stop offset="0" stop-color="#00d1ff"  />
+			<stop offset="1" stop-color="#0085ff"  />
+		</linearGradient>
+		<linearGradient id="grd2" gradientUnits="userSpaceOnUse"  x1="239.6" y1="291.9" x2="335.4" y2="291.9">
+			<stop offset="0" stop-color="#000c11" stop-opacity="0" />
+			<stop offset="1" stop-color="#000c11"  />
+		</linearGradient>
+		<linearGradient id="grd3" gradientUnits="userSpaceOnUse"  x1="249.3" y1="126.8" x2="249.3" y2="378.7">
+			<stop offset="0" stop-color="#00d1ff"  />
+			<stop offset="1" stop-color="#0085ff"  />
+		</linearGradient>
+		<linearGradient id="grd4" gradientUnits="userSpaceOnUse"  x1="249.8" y1="75.2" x2="249.8" y2="434.8">
+			<stop offset="0" stop-color="#00d1ff"  />
+			<stop offset="1" stop-color="#0085ff"  />
+		</linearGradient>
+		<linearGradient id="grd5" gradientUnits="userSpaceOnUse"  x1="255" y1="18" x2="255" y2="492">
+			<stop offset="0" stop-color="#00d1ff"  />
+			<stop offset="1" stop-color="#0085ff"  />
+		</linearGradient>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.s0 { fill: none;stroke: url(#grd1);stroke-linecap:round;stroke-linejoin:round;stroke-width: 7 } 
+		.s1 { fill: url(#grd2) } 
+		.s2 { fill: none;stroke: url(#grd3);stroke-linecap:round;stroke-linejoin:round;stroke-width: 7 } 
+		.s3 { fill: none;stroke: url(#grd4);stroke-linecap:round;stroke-linejoin:round;stroke-width: 7 } 
+		.s4 { fill: none;stroke: url(#grd5);stroke-linecap:round;stroke-linejoin:round;stroke-width: 7 } 
+	</style>
+	<g id="Layer" style="opacity: .5">
+		<g id="Layer">
+			<path id="Layer" class="s0" d="m184.07 252.45c0-35.89 29.09-64.98 64.98-64.98c35.89 0 64.98 29.09 64.98 64.98c0 35.89-29.09 64.98-64.98 64.98c-35.89 0-64.98-29.09-64.98-64.98z" />
+		</g>
+		<path id="Layer" class="s1" d="m196.85 140.51h138.54v374.39h-138.54v-374.39z" />
+		<g id="Layer" style="opacity: .8">
+			<path id="Layer" class="s2" d="m249.28 378.65c-69.65 0-125.94-56.3-125.94-125.94c0-69.65 56.3-125.94 125.94-125.94c69.65 0 125.94 56.3 125.94 125.94c0 69.65-56.3 125.94-125.94 125.94h0z" />
+		</g>
+		<g id="Layer" style="opacity: .6">
+			<path id="Layer" class="s3" d="m249.85 434.75c-99.09 0-179.18-80.35-179.18-179.75c0-99.4 80.09-179.75 179.18-179.75c99.09 0 179.18 80.35 179.18 179.75c0 99.4-80.09 179.75-179.18 179.75h0z" />
+		</g>
+		<g id="Layer" style="opacity: .3">
+			<path id="Layer" class="s4" d="m255 492c-131.06 0-237-105.94-237-237c0-131.06 105.94-237 237-237c131.06 0 237 105.94 237 237c0 131.06-105.94 237-237 237z" />
+		</g>
+	</g>
+</svg>

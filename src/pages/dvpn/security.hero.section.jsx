@@ -6,47 +6,88 @@ import { SecurityPoints, SocialProofers } from "config/constants";
 import CircleDownIcon from "assets/icons/circle-down.svg";
 import "./security.hero.section.scss";
 
-const Index = ({ handleDownloadApp }) => (
-  <div className="DVPN_SecurityHero">
-    <div className="container">
-      <div className="row">
-        <div className="SocialProofers d-flex justify-content-center align-items-center">
-          {SocialProofers.map((proofer) => (
-            <Link key={proofer.name} to={proofer.link}>
-              <img src={proofer.image} alt={proofer.name} />
-            </Link>
-          ))}
+const Index = () => {
+  const handleDownloadApp = () => {};
+  return (
+    <div className="DVPN_SecurityHero">
+      <div className="container">
+        <div className="row">
+          <div className="SocialProofers d-flex justify-content-center align-items-center flex-wrap">
+            {SocialProofers.map((proofer) => (
+              <Link key={proofer.name} to={proofer.link}>
+                <img src={proofer.image} alt={proofer.name} />
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="row Protocol">
-        <div className="label">
-          DECENTRALIZED INTERNET FREEDOM PROTOCOL
-        </div>
-        <div className="title mt-2">
-          Boost your online security & use the truly global web with MASQ dVPN
-        </div>
-
-        <div className="point my-5">
-          {SecurityPoints.map((point, index) => (
-            <div key={"point" + index} className="d-inline-flex align-items-center w-50 my-3">
-              <img className="me-3" src={point.image} alt={"security point"} />
-              <span>{point.desc}</span>
+        <div className="row Protocol">
+          <div className="col-md-12 col-lg-8">
+            <div
+              className="label text-center text-sm-start"
+              data-sal="slide-up"
+              data-sal-duration="2000"
+              data-sal-delay="0"
+              data-sal-easing="ease"
+            >
+              DECENTRALIZED INTERNET FREEDOM PROTOCOL
             </div>
-          ))}
-        </div>
+            <div
+              className="title mt-2 text-center text-sm-start"
+              data-sal="slide-up"
+              data-sal-duration="2000"
+              data-sal-delay="200"
+              data-sal-easing="ease"
+            >
+              Boost your online security & use the truly global web with MASQ
+              dVPN
+            </div>
 
-        <div>
-          <Button
-            preIcon={CircleDownIcon}
-            label="DOWNLOAD MASQ DVPN BROWSER"
-            handleClick={handleDownloadApp}
-          />
+            <div className="my-5">
+              {SecurityPoints.map((point, index) => (
+                <div
+                  key={"point" + index}
+                  className="point d-inline-flex align-items-center my-3"
+                  data-sal="slide-up"
+                  data-sal-duration="2000"
+                  data-sal-delay={400 + 100 * index}
+                  data-sal-easing="ease"
+                >
+                  <img
+                    className="me-3"
+                    src={point.image}
+                    alt={"security point"}
+                  />
+                  <span>{point.desc}</span>
+                </div>
+              ))}
+            </div>
+
+            <div
+              data-sal="slide-up"
+              data-sal-duration="2000"
+              data-sal-delay="1000"
+              data-sal-easing="ease"
+            >
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+              >
+                <Button
+                  preIcon={CircleDownIcon}
+                  label="DOWNLOAD MASQ DVPN BROWSER"
+                  handleClick={handleDownloadApp}
+                />
+              </a>
+              <div className="tip mt-3">
+                For {window.platform.os.toString()} or later.
+              </div>
+            </div>
+          </div>
         </div>
-        <span className="tip mt-3">For Mac OS X 10.11 or later.</span>
       </div>
-
     </div>
-  </div>
-);
+  );
+};
 
 export default Index;

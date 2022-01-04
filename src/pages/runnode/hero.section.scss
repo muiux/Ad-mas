@@ -1,0 +1,47 @@
+@import "styles/utils", "styles/variables";
+
+.RunANode_hero {
+  // padding-top: 125px;
+  background: url("assets/images/runnodeheroimage.png") left top no-repeat;
+  background-size: auto 100%;
+
+  .container {
+    padding-top: 220px;
+    padding-bottom: 220px;
+  }
+
+  .badge {
+    @include badge;
+  }
+
+  .title {
+    @include font-normal;
+    font-size: 53px;
+    letter-spacing: -1px;
+    color: $text-secondary;
+    text-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+
+    .blue {
+      color: $text-active;
+    }
+
+    .yellow {
+      @include yellow-gradient-text;
+    }
+  }
+
+  & .tip {
+    cursor: pointer;
+
+    & > span {
+      @include gradient-text;
+      @include font-bold;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    & > a > img {
+      height: 40px;
+    }
+  }
+}

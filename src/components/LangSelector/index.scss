@@ -2,17 +2,29 @@
 @import "styles/utils";
 
 .LangSelector {
-  background: #00131d;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-  padding: 10px;
-  width: 65px;
-  cursor: pointer;
+  select {
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    width: 60px;
+    padding: 7px;
 
-  & > span {
     @include font-bold;
     color: $text-secondary;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 0.1em;
+
+    appearance: none;
+    background: url("assets/icons/chev-down.svg") right 8px center no-repeat,
+      #00131d;
+    background-size: 15px;
+
+    &:focus-visible {
+      outline: none !important;
+    }
+
+    & > option {
+      padding: 5px auto;
+    }
   }
 }

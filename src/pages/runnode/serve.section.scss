@@ -1,0 +1,60 @@
+@import "styles/utils", "styles/variables";
+
+.RunANode_serve {
+  background: url("assets/backgrounds/stars.svg") left 100px top no-repeat;
+  padding: 100px 0px;
+  overflow: hidden;
+
+  .renderer {
+    height: 100vh;
+    margin-bottom: 50px;
+
+    @media (max-width: 576px) {
+      height: auto;
+    }
+  }
+
+  .right-fluid {
+    position: relative;
+
+    & img {
+      filter: drop-shadow(0px 0px 115px rgba(0, 133, 255, 0.35));
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 75%;
+      transform: translate(0%, -50%);
+
+      @media (max-width: 576px) {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        transform: none;
+      }
+    }
+  }
+
+  .label {
+    @include label-text;
+  }
+
+  .title {
+    @include title-text;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+    font-size: 38px;
+  }
+
+  .subtitle {
+    @include subtitle-text;
+    white-space: pre-line;
+  }
+
+  .tip {
+    @include font-normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: $text-info;
+  }
+}

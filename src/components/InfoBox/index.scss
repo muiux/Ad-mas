@@ -1,0 +1,30 @@
+@import "styles/utils", "styles/variables";
+
+.InfoBox {
+  display: inline-block;
+  mix-blend-mode: normal;
+  border: 1px solid rgba(143, 184, 202, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+
+  &_preIcon {
+    border: 3px solid #00b2ff22;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 33px;
+    height: 33px;
+  }
+
+  &_title {
+    @include font-normal;
+    font-size: 22px;
+    color: #ffffff;
+  }
+
+  &_content {
+    @include font-normal;
+    font-size: 14px;
+    line-height: 130%;
+    color: #8fb8ca;
+  }
+}

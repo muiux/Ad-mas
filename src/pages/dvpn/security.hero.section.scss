@@ -3,14 +3,20 @@
 .DVPN_SecurityHero {
   clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
 
-  background: url("assets/backgrounds/star-net.svg") top 70% right 0 no-repeat,radial-gradient(
+  background: url("assets/backgrounds/star-net.svg") top 70% right 0 no-repeat,
+    radial-gradient(
       56.78% 84.41% at 100% 26%,
       rgba(19, 213, 255, 0.2) 0%,
       rgba(123, 19, 255, 0) 100%
     ),
     $bg-secondary;
-  padding-top: $dashboard-image-height / 2 + 25px;
+  padding-top: 34vw;
   padding-bottom: 150px;
+
+  @media (max-width: 576px) {
+    clip-path: polygon(0 0, 100% 2%, 100% 98%, 0% 100%);
+    padding-bottom: 100px;
+  }
 
   & .SocialProofers > a {
     margin: 10px;
@@ -18,23 +24,31 @@
 
   & .Protocol {
     margin-top: 50px;
-    width: calc(50% + 150px);
 
-    & > .label {
+    .label {
       @include label-text;
     }
 
-    & > .title {
+    .title {
       @include title-text;
     }
 
-    & > .point {
+    .point {
+      width: 50%;
+
+      @media (max-width: 576px) {
+        width: 100%;
+      }
       & img {
         width: 50px;
+
+        @media (max-width: 576px) {
+          width: 40px;
+        }
       }
       & span {
         @include font-bold;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 140%;
         color: #002737;
       }

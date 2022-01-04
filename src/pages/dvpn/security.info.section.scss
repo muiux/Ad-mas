@@ -7,20 +7,43 @@
   z-index: 1;
   background-color: #000c11;
 
+  @media (max-width: 576px) {
+    padding: 50px 0px;
+  }
+
   .panel {
     padding: 100px 0px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
 
   .multiple-hops {
-    background: url("assets/backgrounds/hops.png") right 0px center no-repeat;
+    background: url("assets/backgrounds/multi-hops.png") right 0px center
+      no-repeat;
+    background-size: 40vw auto !important;
+
+    .deco {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
-  
+
   .trace-resistant {
     background: url("assets/backgrounds/trace.png") right 0px center no-repeat;
+    background-size: 40vw auto !important;
   }
 
   .get-paid {
     background: url("assets/backgrounds/wallet.png") right 0px center no-repeat;
+    background-size: calc(40vw + 71px) auto !important;
+
+    .deco {
+      position: absolute;
+      top: -10px;
+      left: -20px;
+    }
   }
 
   .label {
@@ -30,6 +53,14 @@
     @include title-text;
     color: #ffffff;
     text-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+    position: relative;
+    display: inline-block;
+    align-items: baseline;
+    margin-right: -30px;
+
+    @media (max-width: 576px) {
+      margin-right: 0px;
+    }
   }
   .subtitle {
     @include subtitle-text;
