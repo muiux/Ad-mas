@@ -8,6 +8,8 @@ import DashboardImg from "assets/images/heroimage.png";
 import CircleDownIcon from "assets/icons/circle-down.svg";
 import "./hero.section.scss";
 
+const platform = require("platform");
+
 const particlesInit = (main) => {
   // console.log(main);
   // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
@@ -162,7 +164,8 @@ const Index = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                // href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                href={`/download/${platform.os.family.toLocaleLowerCase()}`}
               >
                 <Button
                   preIcon={CircleDownIcon}
@@ -171,7 +174,8 @@ const Index = () => {
                 />
               </a>
               <span className="tip mt-3">
-                For {window.platform.os.toString()} or later.
+                {/* For {window.platform.os.toString()} or later. */}
+                For {platform.os.toString()} or later.
               </span>
             </div>
 

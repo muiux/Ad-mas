@@ -11,6 +11,8 @@ import ServingTabImg from "assets/images/ServingTab.png";
 
 import "./faq.section.scss";
 
+const platform = require("platform");
+
 const Index = () => {
   const handleReadNetworkDynamics = () => {};
   const handleDownload = () => {};
@@ -107,7 +109,8 @@ const Index = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                // href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                href={`/download/${platform.os.family.toLocaleLowerCase()}`}
               >
                 <Button
                   preIcon={CircleDownIcon}
