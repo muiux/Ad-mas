@@ -6,6 +6,8 @@ import Button from "components/Button";
 import CircleDownIcon from "assets/icons/circle-down.svg";
 import "./eco.section.scss";
 
+const platform = require("platform");
+
 const Features = [
   {
     preIcon: require("assets/icons/poly-no1.svg").default,
@@ -116,7 +118,8 @@ const Index = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+              // href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+              href={`/download/${platform.os.family.toLocaleLowerCase()}`}
             >
               <Button
                 preIcon={CircleDownIcon}
@@ -126,7 +129,8 @@ const Index = () => {
             </a>
             <div className="mt-2" />
             <span className="tip">
-              For {window.platform.os.toString()} or later.
+              {/* For {window.platform.os.toString()} or later. */}
+              For {platform.os.toString()} or later.
             </span>
           </div>
         </div>

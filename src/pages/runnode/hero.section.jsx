@@ -8,6 +8,8 @@ import CircleCheckIcon from "assets/icons/circle-check.svg";
 import GithubLogo from "assets/logos/github-light.png";
 import "./hero.section.scss";
 
+const platform = require("platform");
+
 const Index = () => {
   const handleRead = () => {};
   const handleDownloadNodeApp = () => {};
@@ -57,7 +59,8 @@ const Index = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                // href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                href={`/download/${platform.os.family.toLocaleLowerCase()}`}
               >
                 <Button
                   label="DOWNLOAD THE NODE APP"

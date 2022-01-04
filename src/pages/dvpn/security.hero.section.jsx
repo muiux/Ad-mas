@@ -6,6 +6,8 @@ import { SecurityPoints, SocialProofers } from "config/constants";
 import CircleDownIcon from "assets/icons/circle-down.svg";
 import "./security.hero.section.scss";
 
+const platform = require("platform");
+
 const Index = () => {
   const handleDownloadApp = () => {};
   return (
@@ -71,7 +73,8 @@ const Index = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                // href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                href={`/download/${platform.os.family.toLocaleLowerCase()}`}
               >
                 <Button
                   preIcon={CircleDownIcon}
@@ -80,7 +83,8 @@ const Index = () => {
                 />
               </a>
               <div className="tip mt-3">
-                For {window.platform.os.toString()} or later.
+                {/* For {window.platform.os.toString()} or later. */}
+                For {platform.os.toString()} or later.
               </div>
             </div>
           </div>

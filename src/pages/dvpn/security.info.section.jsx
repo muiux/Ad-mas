@@ -14,6 +14,8 @@ import TraceResistantImg from "assets/images/trace-resistant.svg";
 // import MutilHopsImg from "assets/backgrounds/multi-hops.png";
 import "./security.info.section.scss";
 
+const platform = require("platform");
+
 const Index = () => {
   // const desktop = useMediaQuery({ minWidth: 768 }); //  < lg
 
@@ -150,7 +152,8 @@ const Index = () => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                  // href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+                  href={`/download/${platform.os.family.toLocaleLowerCase()}`}
                 >
                   <Button
                     preIcon={CircleDownIcon}
@@ -169,7 +172,8 @@ const Index = () => {
               </div>
               <div className="mt-3">
                 <span className="tip">
-                  For {window.platform.os.toString()} or later.
+                  {/* For {window.platform.os.toString()} or later. */}
+                  For {platform.os.toString()} or later.
                 </span>
               </div>
             </div>

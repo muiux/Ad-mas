@@ -7,6 +7,8 @@ import DAppsImg from "assets/images/dapps.png";
 import CircleDownIcon from "assets/icons/circle-down.svg";
 import "./dApp.section.scss";
 
+const platform = require("platform");
+
 const Index = () => {
   const handleDownloadApp = () => {};
 
@@ -82,7 +84,8 @@ const Index = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+              // href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
+              href={`/download/${platform.os.family.toLocaleLowerCase()}`}
             >
               <Button
                 preIcon={CircleDownIcon}
