@@ -1,18 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Alert from "./alert";
+import ReduxWrapper from "states/reduxWrapper";
+import ServiceWrapper from "services";
+// import Alert from "./alert";
 import Header from "./header";
 import Footer from "./footer";
+
 import "./index.scss";
 
 const Layout = ({ children }) => (
-  <div className="Layout">
-    <Alert />
-    <Header />
-    {children}
-    <Footer />
-  </div>
+  <ReduxWrapper>
+    <ServiceWrapper>
+      <div className="Layout">
+        {/* <Alert /> */}
+        <Header />
+        <div className="body">{children}</div>
+        <Footer />
+      </div>
+    </ServiceWrapper>
+  </ReduxWrapper>
 );
 
 Layout.propTypes = {

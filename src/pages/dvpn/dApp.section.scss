@@ -1,0 +1,97 @@
+@import "styles/utils", "styles/variables";
+
+.DVPN_DApp {
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+  background: url("assets/icons/dapps.svg") no-repeat, $bg-secondary;
+  padding-top: 150px;
+  padding-bottom: 30vw;
+
+  @media (max-width: 576px) {
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0% 100%);
+    padding-top: 100px;
+  }
+
+  .label {
+    @include label-text;
+  }
+
+  .title {
+    @include title-text;
+  }
+
+  .dAppWrapper {
+    margin-top: 80px;
+
+    & .dAppItem {
+      margin: 5px;
+
+      @media (max-width: 576px) {
+        margin: 3px;
+      }
+    }
+    @media (max-width: 576px) {
+      margin-top: 50px;
+    }
+  }
+
+  & .overlay {
+    width: 300px;
+    height: 100%;
+    z-index: 100;
+  }
+
+  & .overlay:nth-child(2) {
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      #f5fcff 0%,
+      rgba(245, 252, 255, 0) 92.36%
+    );
+  }
+
+  & .overlay:last-child {
+    top: 0;
+    right: 0;
+    background: linear-gradient(
+      270deg,
+      #f5fcff 0%,
+      rgba(245, 252, 255, 0) 92.36%
+    );
+  }
+
+  .row span {
+    @include font-normal;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #8fb8ca;
+  }
+}
+
+.DVPN_DApp_img {
+  position: relative;
+
+  & .dapps {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 1;
+    width: fit-content;
+
+    & > img {
+      width: 100%;
+    }
+
+    & > .download {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

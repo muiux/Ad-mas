@@ -1,0 +1,100 @@
+@import "styles/utils", "styles/variables";
+
+.RunANode_eco {
+  overflow-x: hidden;
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
+  background: url("assets/backgrounds/dapp-radial.svg") top 0 left 0 no-repeat,
+    radial-gradient(
+      56.62% 111.54% at 99.72% 0%,
+      rgba(19, 213, 255, 0.2) 0%,
+      rgba(123, 19, 255, 0) 100%
+    ),
+    $bg-secondary;
+
+  padding-top: 150px;
+  padding-bottom: 100px;
+
+  @media (max-width: 576px) {
+    clip-path: polygon(0 0, 100% 2%, 100% 98%, 0% 100%);
+  }
+
+  & .feature-image {
+    filter: drop-shadow(0px 0px 115px rgba(0, 133, 255, 0.35));
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+    @media (max-width: 576px) {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  & .label {
+    @include label-text;
+  }
+
+  & .title {
+    @include title-text;
+  }
+
+  & .tip {
+    @include font-normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: $text-info;
+  }
+}
+
+.Runnode_FeatureBox {
+  display: flex;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  background: $text-secondary;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  .header {
+    background: linear-gradient(90deg, #ffffff 0%, #e6f6fd 100%);
+    border-radius: 15px 0 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    & img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .body {
+    padding: 20px 30px;
+
+    &_title {
+      @include font-bold;
+      font-size: 20px;
+      line-height: 140%;
+      color: $text-primary;
+
+      @media (max-width: 576px) {
+        font-size: 18px;
+      }
+    }
+
+    &_content {
+      @include font-normal;
+      font-size: 14px;
+      line-height: 120%;
+      color: $text-info;
+
+      @media (max-width: 576px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

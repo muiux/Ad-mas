@@ -25,25 +25,73 @@
   -webkit-text-fill-color: transparent;
 }
 
+@mixin yellow-gradient-text {
+  background: -webkit-linear-gradient(#fdf540, #fd8f40);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @mixin label-text {
   @include font-bold;
   @include gradient-text;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 19px;
   letter-spacing: 0.1em;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 }
 
 @mixin title-text {
   @include font-normal();
-  font-size: 46px;
+  font-size: 42px;
+  font-weight: 400;
   line-height: 110%;
   letter-spacing: -1px;
-  color: #2A4753;
+  color: $text-primary;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
 }
 
 @mixin subtitle-text {
   @include font-normal();
-  font-size: 16px;
+  font-size: 15px;
   line-height: 140%;
   color: $text-info;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+@mixin crypto-badge {
+  border: 1px solid $text-active;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: fit-content;
+
+  @include gradient-text;
+  @include font-bold;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 10px;
+  margin: 10px;
+
+  & > strong {
+    font-size: 14px;
+  }
+}
+
+@mixin badge {
+  border: 1px solid $text-active;
+  border-radius: 2px;
+
+  @include font-bold;
+  font-size: 10px;
+  line-height: 13.5px;
+  letter-spacing: 1px;
+  color: $text-active;
 }

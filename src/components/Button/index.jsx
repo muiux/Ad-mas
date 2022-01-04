@@ -12,9 +12,15 @@ const Button = ({
 }) => {
   return (
     <button
-      className={cx("Button", "d-inline-flex", "align-items-center", className, {
-        fill,
-      })}
+      className={cx(
+        "Button",
+        "d-inline-flex",
+        "align-items-center",
+        className,
+        {
+          fill,
+        }
+      )}
       onClick={handleClick}
     >
       {preIcon && <img className="me-3" src={preIcon} alt="button icon" />}

@@ -1,0 +1,88 @@
+@import "styles/utils", "styles/variables";
+
+.FeatureBox {
+  background: #01141c;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  height: 100%;
+
+  &_header {
+    background: linear-gradient(180deg, #01141c 52.67%, #000c11 108.73%);
+    border-radius: 15px 15px 0px 0px;
+
+    & > img {
+      width: 90px;
+
+      @media (max-width: 768px) {
+        width: 70px;
+      }
+    }
+  }
+  &_body {
+    &_title {
+      @include font-bold;
+      font-size: 18px;
+      line-height: 140%;
+      color: $text-secondary;
+    }
+    &_content {
+      @include font-normal;
+      font-size: 13px;
+      line-height: 120%;
+      white-space: pre-line;
+      color: $text-info;
+    }
+
+    &_image {
+      position: absolute;
+      left: 0;
+      bottom: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+
+      & > img {
+        margin: 0px 10px;
+      }
+    }
+
+    &_link {
+      position: absolute;
+      left: 0;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+
+      & a {
+        text-decoration: none;
+      }
+
+      & span {
+        @include font-bold;
+        @include gradient-text;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+      }
+    }
+  }
+
+  &.light {
+    background: #ffffff;
+
+    .FeatureBox_header {
+      background: linear-gradient(180deg, #ffffff 52.67%, #e6f6fd 108.73%);
+    }
+
+    .FeatureBox_body {
+      & > span:first-child {
+        color: $text-primary;
+      }
+      & > span:last-child {
+        color: $text-info;
+      }
+    }
+  }
+}

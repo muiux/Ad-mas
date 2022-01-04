@@ -1,0 +1,43 @@
+@import "styles/utils", "styles/variables";
+
+.DVPN_EcoSystem {
+  position: relative;
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+  background: url("assets/backgrounds/dapp-radial.svg") top 0 left 0 no-repeat,
+    radial-gradient(
+      56.62% 111.54% at 99.72% 0%,
+      rgba(19, 213, 255, 0.2) 0%,
+      rgba(123, 19, 255, 0) 100%
+    ),
+    $bg-secondary;
+
+  padding-top: 200px;
+  padding-bottom: 50px;
+
+  @media (max-width: 576px) {
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0% 100%);
+  }
+
+  & .label {
+    @include label-text;
+  }
+
+  & .title {
+    @include title-text;
+  }
+
+  & .tip {
+    cursor: pointer;
+
+    & > span {
+      @include gradient-text;
+      @include font-bold;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    & > a > img {
+      height: 40px;
+    }
+  }
+}

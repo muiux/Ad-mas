@@ -1,0 +1,37 @@
+@import "styles/utils", "styles/variables";
+
+.AvailableSwapsPanel {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+
+  .header {
+    padding: 10px;
+
+    & > span {
+      @include font-bold;
+      @include gradient-text;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    .badge {
+      @include crypto-badge;
+      margin: 5px;
+    }
+  }
+
+  .body {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 12, 17, 0.05) 0%,
+      rgba(255, 255, 255, 0) 57.02%
+    );
+    min-height: 100px;
+
+    & img {
+      margin: 10px;
+      height: 30px;
+    }
+  }
+}

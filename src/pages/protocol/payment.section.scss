@@ -1,0 +1,24 @@
+@import "styles/utils", "styles/variables";
+
+.Protocol_payment {
+  padding: 50px 0px 100px 0px;
+  background: linear-gradient(
+      164.23deg,
+      rgba(211, 231, 240, 0.2) 11.57%,
+      rgba(245, 252, 255, 0) 23.99%
+    ),
+    $bg-secondary;
+
+  .powered-by {
+    display: flex;
+    opacity: 0.75;
+
+    & span {
+      @include font-bold;
+      font-size: 10px;
+      line-height: 14px;
+      letter-spacing: 0.05em;
+      color: $text-primary;
+    }
+  }
+}

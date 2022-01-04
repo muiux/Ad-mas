@@ -1,0 +1,43 @@
+@import "styles/utils", "styles/variables";
+
+.Protocol_Hero {
+  .container {
+    padding-top: 220px;
+    padding-bottom: 200px;
+    background: url("assets/images/map.svg") right top 150px no-repeat;
+
+    @media (max-width: 576px) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+
+  & .title {
+    @include font-normal;
+    font-size: 53px;
+    letter-spacing: -1px;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+
+    & > .active {
+      color: $text-active;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 40px;
+    }
+  }
+
+  & .git-tip {
+    & > span {
+      @include gradient-text;
+      @include font-bold;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  & .Infos {
+    padding-top: 100px;
+  }
+}

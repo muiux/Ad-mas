@@ -1,0 +1,30 @@
+@import "styles/utils", "styles/variables";
+
+.Token_transaction {
+  background: radial-gradient(
+      56.62% 111.54% at 99.72% 0%,
+      rgba(19, 213, 255, 0.2) 0%,
+      rgba(123, 19, 255, 0) 100%
+    ),
+    url("assets/backgrounds/quater-radial-bottom.svg") right top no-repeat,
+    $bg-secondary;
+
+  padding: 120px 0 100px 0;
+
+  @media (max-width: 576px) {
+    padding: 100px 0 70px 0;
+  }
+
+  .label {
+    @include label-text;
+  }
+
+  .title {
+    @include title-text;
+  }
+
+  .subtitle {
+    @include subtitle-text;
+    white-space: pre-line;
+  }
+}

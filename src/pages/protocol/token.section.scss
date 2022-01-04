@@ -1,0 +1,25 @@
+@import "styles/utils", "styles/variables";
+
+.Protocol_token {
+  background: radial-gradient(
+      56.62% 111.54% at 99.72% 0%,
+      rgba(19, 213, 255, 0.2) 0%,
+      rgba(123, 19, 255, 0) 100%
+    ),
+    url("assets/backgrounds/quater-radial-bottom.svg") right top no-repeat,
+    $bg-secondary;
+
+  padding: 100px 0px;
+
+  .label {
+    @include label-text;
+  }
+
+  .title {
+    @include title-text;
+  }
+
+  .subtitle {
+    @include subtitle-text;
+  }
+}

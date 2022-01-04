@@ -2,20 +2,27 @@
 @import "styles/utils";
 
 .Layout_Footer {
-  background-color: $bg-primary;
+  // background-color: $bg-primary;
   padding-top: 150px;
   padding-bottom: 100px;
+  z-index: 1;
+  position: relative;
+  text-align: left;
 
-  & .logo {
-    width: 150px;
+  @media (max-width: 576px) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
   }
+
   & p {
     @include font-normal;
     line-height: 140%;
-    font-size: 16px;
+    font-size: 15px;
     color: $text-info;
   }
-  & .label {
+
+  .label {
     @include font-bold;
     @include gradient-text;
     font-size: 12px;
@@ -23,16 +30,27 @@
     letter-spacing: 0.1em;
   }
 
+  & .community {
+    & .wrapper {
+      min-width: 310px;
+    }
+  }
+
   & .external {
+    .label {
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 900;
+    }
     a {
       text-decoration: none;
       & > span {
         @include font-normal;
         color: $text-secondary;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 140%;
         &:hover {
-          color: $text-primary;
+          color: $text-active;
         }
       }
     }

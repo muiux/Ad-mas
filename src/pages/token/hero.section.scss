@@ -1,0 +1,35 @@
+@import "styles/utils", "styles/variables";
+
+.Token_hero {
+  background: url("assets/images/tokenheroimage.png") right top no-repeat;
+  background-size: contain;
+
+  .hero-text {
+    padding-top: 260px;
+    padding-bottom: 200px;
+
+    @media (max-width: 576px) {
+      padding-top: 150px;
+      padding-bottom: 100px;
+    }
+
+    .title {
+      @include font-normal;
+      font-size: 53px;
+      letter-spacing: -1px;
+      color: $text-secondary;
+      text-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+
+      .success {
+        color: $text-success;
+      }
+      .info {
+        color: $text-active;
+      }
+    }
+
+    .market-badge {
+      @include crypto-badge;
+    }
+  }
+}

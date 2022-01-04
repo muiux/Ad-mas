@@ -1,5 +1,3 @@
-@import "~tachyons-sass/tachyons.scss", "variables";
-
 @font-face {
   font-family: "Uni Neue";
   src: url("assets/fonts/UniNeue/UniNeueRegular.woff") format("woff");
@@ -24,6 +22,10 @@
   font-weight: 900;
 }
 
-* {
-  transition: all 0.2s;
+// * {
+//   transition: all 0.2s;
+// }
+
+a {
+  text-decoration: none !important;
 }

@@ -1,0 +1,28 @@
+@import "styles/utils", "styles/variables";
+
+.Protocol_faq {
+  background: url("assets/backgrounds/stars.svg") left 100px center no-repeat,
+    url("assets/backgrounds/quater-radial-top.svg") right bottom no-repeat;
+
+  .row {
+    padding: 100px 0;
+
+    @media (max-width: 576px) {
+      padding: 50px 0;
+    }
+  }
+
+  .label {
+    @include label-text;
+  }
+  .title {
+    @include title-text;
+    color: $text-secondary;
+    text-shadow: 0px 0px 15px rgba(0, 224, 255, 0.35);
+  }
+  .subtitle {
+    @include subtitle-text;
+    white-space: pre-line;
+    color: #8fb8ca;
+  }
+}
