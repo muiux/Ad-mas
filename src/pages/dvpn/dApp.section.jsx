@@ -3,7 +3,7 @@ import React from "react";
 import { Button, DAppBox } from "components";
 import { DApps } from "config/constants";
 
-import DAppsImg from "assets/images/dapps.png";
+import DAppsImg from "assets/images/app-dapps.webp";
 import CircleDownIcon from "assets/icons/circle-down.svg";
 import "./dApp.section.scss";
 
