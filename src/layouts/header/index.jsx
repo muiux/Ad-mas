@@ -35,6 +35,7 @@ const Header = () => {
                 className={cx("navItem", "mx-3")}
                 to={nav.link}
                 activeClassName="active"
+                partiallyActive={true}
               >
                 {nav.text}
               </Link>
@@ -69,7 +70,12 @@ const Header = () => {
       >
         <div className="d-flex flex-column align-items-center">
           {NavLinks.map((nav) => (
-            <Link key={nav.text} to={nav.link} activeClassName="active">
+            <Link
+              key={nav.text}
+              to={nav.link}
+              activeClassName="active"
+              partiallyActive={true}
+            >
               {nav.text}
             </Link>
           ))}

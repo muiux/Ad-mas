@@ -96,7 +96,7 @@ const Index = () => {
         // tip: `For ${window.platform.os.toString()} or later.`,
         tip: `For ${platform.os.toString()} or later.`,
       },
-      image: require("assets/images/app-dashboard.png").default,
+      image: require("assets/images/app-dashboard-consuming.png").default,
     },
     {
       label: "KEEPING THE COMMUNITY SAFE AND SECURE",
