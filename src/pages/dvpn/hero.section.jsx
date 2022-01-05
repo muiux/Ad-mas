@@ -162,6 +162,7 @@ const Index = () => {
               data-sal-easing="ease"
             >
               <a
+                className="w-auto"
                 target="_blank"
                 rel="noreferrer"
                 // href={`/download/${window.platform.os.family.toLocaleLowerCase()}`}
