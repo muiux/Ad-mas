@@ -17,7 +17,7 @@ const Index = () => {
           <div className="SocialProofers d-flex justify-content-center align-items-center flex-wrap">
             {SocialProofers.map((proofer) => (
               <Link key={proofer.name} to={proofer.link}>
-                <img src={proofer.image} alt={proofer.name} />
+                <img src={proofer.image} alt={proofer.name} height="25px" />
               </Link>
             ))}
           </div>

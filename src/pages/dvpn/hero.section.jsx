@@ -4,7 +4,7 @@ import Particles from "react-tsparticles";
 
 import Button from "components/Button";
 import { currencyFormatter } from "utils/currency";
-import DashboardImg from "assets/images/dvpnheroimage.webp";
+import DashboardImg from "assets/images/dvpnheroimage.png";
 import CircleDownIcon from "assets/icons/circle-down.svg";
 import "./hero.section.scss";
 
