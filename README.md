@@ -2,6 +2,8 @@
 
 MASQ Web application based on [Gatsbyjs](https://www.gatsbyjs.com/)
 
+[**Live**](https://masq.ai/)
+
 ## Build instructions
 
 To obtain an executable file, run:
